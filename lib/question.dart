@@ -35,7 +35,14 @@ class Question {
     try {
       var connection = {"email": login, "password": password};
       var res =
-          await http.post(Uri.parse("$baseUrl/connexion"), body: connection);
+          await http.post(Uri.parse("$baseUrl/Connexion"), headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'email': login,
+          'password': password
+        }),);
+      print("login : " + res.statusCode.toString() );
       if (res.statusCode == 200) {
         Navigator.pushNamed(context, '/liste');
       } else {
