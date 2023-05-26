@@ -38,7 +38,7 @@ class _ConnexionState extends State<Connexion> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
-                      color: Colors.blueAccent),
+                      color: Colors.orange),
                 ),
               ),
             ),
@@ -82,7 +82,7 @@ class _ConnexionState extends State<Connexion> {
                 width: 250,
                 margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.orange,
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {

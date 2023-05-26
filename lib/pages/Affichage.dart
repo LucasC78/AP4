@@ -11,12 +11,12 @@ class Affichage extends StatefulWidget {
 }
 
 class _AffichageState extends State<Affichage> {
-  late Future<List> _question;
+  late Future<List> _articles;
 
   @override
   void initState() {
     super.initState();
-    _question = Question.getAllQuestion();
+    _articles = Question.getAllQuestion();
   }
 
   @override
@@ -26,7 +26,7 @@ class _AffichageState extends State<Affichage> {
         title: const Text("Liste des questions"),
       ),
       body: FutureBuilder<List>(
-        future: _question,
+        future: _articles,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
@@ -38,11 +38,20 @@ class _AffichageState extends State<Affichage> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            snapshot.data![i]['question'].toString(),
+                            snapshot.data![i]['name'].toString(),
                             style: const TextStyle(fontSize: 20),
                           ),
                           Text(
-                            snapshot.data![i]['reponse'].toString(),
+                            snapshot.data![i]['prix'].toString(),
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                          Image.asset(
+                            snapshot.data![i]['image'],
+                            height: 250,
+                            width: 250,
+                          ),
+                          Text(
+                            snapshot.data![i]['quantite'].toString(),
                             style: const TextStyle(fontSize: 18),
                           ),
                           Row(

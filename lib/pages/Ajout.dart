@@ -10,9 +10,10 @@ class Ajout extends StatefulWidget {
 
 class _AjoutState extends State<Ajout> {
   final GlobalKey<FormState> login = GlobalKey<FormState>();
-  final themeController = TextEditingController();
-  final questionController = TextEditingController();
-  final reponseController = TextEditingController();
+  final nameController = TextEditingController();
+  final prixController = TextEditingController();
+  final imageController = TextEditingController();
+  final quantiteController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,22 +40,22 @@ class _AjoutState extends State<Ajout> {
                 padding: EdgeInsets.all(50),
                 child: Center(
                   child: Text(
-                    "Ajouter une Question",
+                  "Ajouter un Article",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
-                        color: Colors.blueAccent),
+                        color: Colors.orange),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextFormField(
-                  controller: themeController,
+                  controller: nameController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Thème',
-                      hintText: 'Entrez un thème'),
+                      labelText: 'Nom',
+                      hintText: 'Entrez le nom'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Veuillez rentrer un thème";
@@ -67,14 +68,14 @@ class _AjoutState extends State<Ajout> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
-                  controller: questionController,
+                  controller: prixController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Question',
-                      hintText: 'Entrez une question'),
+                      labelText: 'Prix',
+                      hintText: 'Entrez un prix'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Veuillez rentrer une question";
+                      return "Veuillez rentrer un article";
                     }
                     return null;
                   },
@@ -84,11 +85,28 @@ class _AjoutState extends State<Ajout> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
-                  controller: reponseController,
+                  controller: imageController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Réponse',
-                      hintText: 'Entrez la réponse'),
+                      labelText: 'Image',
+                      hintText: 'Entrez l image'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Veuillez rentrer la réponse";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                child: TextFormField(
+                  controller: quantiteController,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Quantité',
+                      hintText: 'Entrez la quantité'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Veuillez rentrer la réponse";
@@ -103,13 +121,14 @@ class _AjoutState extends State<Ajout> {
                   width: 250,
                   margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                   decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.orange,
                       borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () {
                       if (login.currentState!.validate()) {
-                        Question.ajout(context, themeController.text,
-                            questionController.text, reponseController.text);
+                        Question.ajout(context, nameController.text,
+                        prixController.text, imageController.text,
+                        quantiteController.text);
                       }
                     },
                     child: const Text("Validez",

@@ -1,4 +1,13 @@
-2023/04/28-17:26:19.491 52d4 Reusing MANIFEST C:\Users\Lucas\AppData\Local\Temp\flutter_tools.b6c3a130\flutter_tools_chrome_device.4e49a32\Default\Sync Data\LevelDB/MANIFEST-000001
-2023/04/28-17:26:19.512 52d4 Recovering log #4
-2023/04/28-17:26:19.512 52d4 Reusing old log C:\Users\Lucas\AppData\Local\Temp\flutter_tools.b6c3a130\flutter_tools_chrome_device.4e49a32\Default\Sync Data\LevelDB/000004.log 
-2023/04/28-17:26:19.513 52d4 Delete type=0 #3
+2023/05/22-20:00:31.371 50dc Reusing MANIFEST C:\Users\Lucas\AppData\Local\Temp\flutter_tools.47577b5\flutter_tools_chrome_device.85430c9b\Default\Sync Data\LevelDB/MANIFEST-000001
+2023/05/22-20:00:31.372 50dc Recovering log #19
+2023/05/22-20:00:31.373 50dc Reusing old log C:\Users\Lucas\AppData\Local\Temp\flutter_tools.47577b5\flutter_tools_chrome_device.85430c9b\Default\Sync Data\LevelDB/000019.log 
+2023/05/22-20:00:31.373 50dc Delete type=0 #3
+2023/05/22-20:00:31.373 50dc Delete type=0 #4
+2023/05/22-20:00:31.373 50dc Delete type=0 #7
+2023/05/22-20:00:31.373 50dc Delete type=2 #8
+2023/05/22-20:00:31.373 50dc Delete type=0 #10
+2023/05/22-20:00:31.373 50dc Delete type=2 #11
+2023/05/22-20:00:31.373 50dc Delete type=0 #13
+2023/05/22-20:00:31.373 50dc Delete type=2 #14
+2023/05/22-20:00:31.374 50dc Delete type=0 #16
+2023/05/22-20:00:31.374 50dc Delete type=2 #17

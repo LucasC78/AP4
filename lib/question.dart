@@ -7,7 +7,7 @@ class Question {
 
   static Future<List> getAllQuestion() async {
     try {
-      var res = await http.get(Uri.parse("$baseUrl/question"));
+      var res = await http.get(Uri.parse("$baseUrl/articles"));
       if (res.statusCode == 200) {
         return jsonDecode(res.body);
       } else {
@@ -20,7 +20,7 @@ class Question {
 
   static Future<List> getQuestion(int id) async {
     try {
-      var res = await http.get(Uri.parse("$baseUrl/question/$id"));
+      var res = await http.get(Uri.parse("$baseUrl/Connexion/$id"));
       if (res.statusCode == 200) {
         return jsonDecode(res.body);
       } else {
@@ -53,18 +53,19 @@ class Question {
     }
   }
 
-  static ajout(BuildContext context, String theme, String question,
-      String reponse) async {
+  static ajout(BuildContext context, String name, String prix,
+      String image, String quantite) async {
     try {
       var res = await http.post(
-        Uri.parse("$baseUrl/question"),
+        Uri.parse("$baseUrl/articles"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, String>{
-          'theme': theme,
-          'question': question,
-          'reponse': reponse
+          'name': name,
+          'prix': prix,
+          'image': image,
+          'quantite': quantite
         }),
       );
       if (res.statusCode == 200) {
@@ -77,18 +78,19 @@ class Question {
     }
   }
 
-  static Update(BuildContext context, int id, String theme, String question,
-      String reponse) async {
+  static Update(BuildContext context, int id, String name, String prix,
+      String image, String quantite) async {
     try {
       var res = await http.put(
-        Uri.parse("$baseUrl/question/$id"),
+        Uri.parse("$baseUrl/articles/$id"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, String>{
-          'theme': theme,
-          'question': question,
-          'reponse': reponse,
+          'name': name,
+          'prix': prix,
+          'image': image,
+          'quantite': quantite,
           'id': id.toString()
         }),
       );
@@ -103,7 +105,7 @@ class Question {
   }
 
   static Delete(BuildContext context, int id) async {
-    var res = await http.delete(Uri.parse('$baseUrl/question/$id'),
+    var res = await http.delete(Uri.parse('$baseUrl/articles/$id'),
         body: id.toString());
     if (res.statusCode == 200) {
       Navigator.pushNamed(context, '/liste');

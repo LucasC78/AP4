@@ -12,22 +12,24 @@ class Modifier extends StatefulWidget {
 
 class _ModifierState extends State<Modifier> {
   final GlobalKey<FormState> login = GlobalKey<FormState>();
-  final themeController = TextEditingController();
-  final questionController = TextEditingController();
-  final reponseController = TextEditingController();
-  late Future<List> _question;
+  final nameController = TextEditingController();
+  final prixController = TextEditingController();
+  final imageController = TextEditingController();
+  final quantiteController = TextEditingController();
+  late Future<List> _articles;
 
   @override
   void initState() {
     super.initState();
     // On récupère les informations de la question avec son id
     // passé en paramètre
-    _question = Question.getQuestion(widget.id);
-    _question.then((value) => {
+    _articles = Question.getQuestion(widget.id);
+    _articles.then((value) => {
           // On pré-remplit le formulaire avec les données récupérer de l'API
-          themeController.text = value[0]['theme'],
-          questionController.text = value[0]['question'],
-          reponseController.text = value[0]['reponse'],
+          nameController.text = value[0]['name'],
+          prixController.text = value[0]['prix'],
+          imageController.text = value[0]['image'],
+          quantiteController.text = value[0]['quantite'],
         });
   }
 
@@ -45,7 +47,7 @@ class _ModifierState extends State<Modifier> {
   Widget _Modifier(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Modification d'une question"),
+        title: const Text("Modification d'un article"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -56,21 +58,21 @@ class _ModifierState extends State<Modifier> {
                 padding: EdgeInsets.all(50),
                 child: Center(
                   child: Text(
-                    "Modifier une Question",
+                    "Modifier un article",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
-                        color: Colors.blueAccent),
+                        color: Colors.orange),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextFormField(
-                  controller: themeController,
+                  controller: nameController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Thème',
+                      labelText: 'Nom',
                       hintText: 'Entrez un thème'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -84,10 +86,10 @@ class _ModifierState extends State<Modifier> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
-                  controller: questionController,
+                  controller: prixController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Question',
+                      labelText: 'Prix',
                       hintText: 'Entrez une question'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -101,10 +103,27 @@ class _ModifierState extends State<Modifier> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
-                  controller: reponseController,
+                  controller: imageController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Réponse',
+                      labelText: 'Image',
+                      hintText: 'Entrez la réponse'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Veuillez rentrer la réponse";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                child: TextFormField(
+                  controller: quantiteController,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Quantité',
                       hintText: 'Entrez la réponse'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -120,7 +139,7 @@ class _ModifierState extends State<Modifier> {
                   width: 250,
                   margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                   decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.orange,
                       borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () {
@@ -128,9 +147,10 @@ class _ModifierState extends State<Modifier> {
                         Question.Update(
                             context,
                             widget.id,
-                            themeController.text,
-                            questionController.text,
-                            reponseController.text);
+                            nameController.text,
+                            prixController.text,
+                            imageController.text,
+                            quantiteController.text);
                       }
                     },
                     child: const Text("Validez",

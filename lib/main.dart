@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
     return MaterialApp(
       title: 'Notre application de quizz',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
       routes: {
         '/': (context) => const Connexion(),
