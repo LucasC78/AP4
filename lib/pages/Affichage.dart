@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:quizz/pages/Modifier.dart';
-import 'package:quizz/question.dart';
+import 'package:quizz/articles.dart';
 import 'package:flutter/material.dart';
 
 class Affichage extends StatefulWidget {
@@ -16,14 +16,14 @@ class _AffichageState extends State<Affichage> {
   @override
   void initState() {
     super.initState();
-    _articles = Question.getAllQuestion();
+    _articles = Article.getAllArticle();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Liste des questions"),
+        title: const Text("Liste des articles"),
       ),
       body: FutureBuilder<List>(
         future: _articles,
@@ -87,7 +87,7 @@ class _AffichageState extends State<Affichage> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[
                                                 const Text(
-                                                    'Êtes-vous sûr de vouloir supprimer cette question ? '),
+                                                    'Êtes-vous sûr de vouloir supprimer cette article ? '),
                                                 Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
@@ -105,7 +105,7 @@ class _AffichageState extends State<Affichage> {
                                                             child: const Text(
                                                                 'Oui'),
                                                             onPressed: () {
-                                                              Question.Delete(
+                                                              Article.Delete(
                                                                   context,
                                                                   int.parse(snapshot
                                                                       .data![i]
@@ -128,6 +128,7 @@ class _AffichageState extends State<Affichage> {
                                                               Navigator.pop(
                                                                   context),
                                                         ),
+                                                        
                                                       )
                                                     ]),
                                               ],
@@ -152,7 +153,7 @@ class _AffichageState extends State<Affichage> {
           }
         },
       ),
-      floatingActionButton: FloatingActionButton(
+    floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, '/ajout');
         },

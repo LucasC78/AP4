@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizz/question.dart';
+import 'package:quizz/articles.dart';
 
 class Connexion extends StatefulWidget {
   const Connexion({super.key});
@@ -38,7 +38,7 @@ class _ConnexionState extends State<Connexion> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
-                      color: Colors.orange),
+                      color: Colors.yellow),
                 ),
               ),
             ),
@@ -82,12 +82,12 @@ class _ConnexionState extends State<Connexion> {
                 width: 250,
                 margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                 decoration: BoxDecoration(
-                    color: Colors.orange,
+                    color: Colors.yellow,
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
                     if (login.currentState!.validate()) {
-                      Question.Login(
+                      Article.Login(
                           context, userController.text, passController.text);
                     }
                   },

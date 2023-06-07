@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Question {
+class Article {
   static String baseUrl = "http://localhost:8000";
 
-  static Future<List> getAllQuestion() async {
+  static Future<List> getAllArticle() async {
     try {
       var res = await http.get(Uri.parse("$baseUrl/articles"));
       if (res.statusCode == 200) {
@@ -18,9 +18,9 @@ class Question {
     }
   }
 
-  static Future<List> getQuestion(int id) async {
+  static Future<List> getArticle(int id) async {
     try {
-      var res = await http.get(Uri.parse("$baseUrl/Connexion/$id"));
+      var res = await http.get(Uri.parse("$baseUrl/articles/$id"));
       if (res.statusCode == 200) {
         return jsonDecode(res.body);
       } else {

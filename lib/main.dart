@@ -21,6 +21,7 @@ class Home extends StatelessWidget {
         '/': (context) => const Connexion(),
         '/liste': (context) => const Affichage(),
         '/ajout': (context) => const Ajout(),
+        
       },
     );
   }

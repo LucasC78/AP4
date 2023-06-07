@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizz/question.dart';
+import 'package:quizz/articles.dart';
 
 class Ajout extends StatefulWidget {
   const Ajout({super.key});
@@ -29,7 +29,7 @@ class _AjoutState extends State<Ajout> {
   Widget _Ajout(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ajout d'une question"),
+        title: const Text("Ajout d'un'Article"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -126,7 +126,7 @@ class _AjoutState extends State<Ajout> {
                   child: TextButton(
                     onPressed: () {
                       if (login.currentState!.validate()) {
-                        Question.ajout(context, nameController.text,
+                        Article.ajout(context, nameController.text,
                         prixController.text, imageController.text,
                         quantiteController.text);
                       }

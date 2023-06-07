@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizz/question.dart';
+import 'package:quizz/articles.dart';
 
 class Modifier extends StatefulWidget {
   final int id;
@@ -21,9 +21,9 @@ class _ModifierState extends State<Modifier> {
   @override
   void initState() {
     super.initState();
-    // On récupère les informations de la question avec son id
+    // On récupère les informations de l'articles avec son id
     // passé en paramètre
-    _articles = Question.getQuestion(widget.id);
+    _articles = Article.getArticle(widget.id);
     _articles.then((value) => {
           // On pré-remplit le formulaire avec les données récupérer de l'API
           nameController.text = value[0]['name'],
@@ -62,7 +62,7 @@ class _ModifierState extends State<Modifier> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
-                        color: Colors.orange),
+                        color: Colors.yellow),
                   ),
                 ),
               ),
@@ -90,10 +90,10 @@ class _ModifierState extends State<Modifier> {
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Prix',
-                      hintText: 'Entrez une question'),
+                      hintText: 'Entrez une article'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Veuillez rentrer une question";
+                      return "Veuillez rentrer une article";
                     }
                     return null;
                   },
@@ -144,7 +144,7 @@ class _ModifierState extends State<Modifier> {
                   child: TextButton(
                     onPressed: () {
                       if (login.currentState!.validate()) {
-                        Question.Update(
+                        Article.Update(
                             context,
                             widget.id,
                             nameController.text,

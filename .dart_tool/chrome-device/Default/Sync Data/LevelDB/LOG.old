@@ -1,13 +1,18 @@
-2023/05/22-21:29:08.548 4b5c Reusing MANIFEST C:\Users\Lucas\AppData\Local\Temp\flutter_tools.1332dc2e\flutter_tools_chrome_device.bd16a058\Default\Sync Data\LevelDB/MANIFEST-000001
-2023/05/22-21:29:08.549 4b5c Recovering log #19
-2023/05/22-21:29:08.550 4b5c Reusing old log C:\Users\Lucas\AppData\Local\Temp\flutter_tools.1332dc2e\flutter_tools_chrome_device.bd16a058\Default\Sync Data\LevelDB/000019.log 
-2023/05/22-21:29:08.551 4b5c Delete type=0 #3
-2023/05/22-21:29:08.551 4b5c Delete type=0 #4
-2023/05/22-21:29:08.551 4b5c Delete type=0 #7
-2023/05/22-21:29:08.551 4b5c Delete type=2 #8
-2023/05/22-21:29:08.551 4b5c Delete type=0 #10
-2023/05/22-21:29:08.551 4b5c Delete type=2 #11
-2023/05/22-21:29:08.551 4b5c Delete type=0 #13
-2023/05/22-21:29:08.551 4b5c Delete type=2 #14
-2023/05/22-21:29:08.552 4b5c Delete type=0 #16
-2023/05/22-21:29:08.552 4b5c Delete type=2 #17
+2023/05/26-15:07:18.874 6408 Reusing MANIFEST C:\Users\Lucas\AppData\Local\Temp\flutter_tools.d04024f7\flutter_tools_chrome_device.636086ea\Default\Sync Data\LevelDB/MANIFEST-000001
+2023/05/26-15:07:18.874 6408 Recovering log #26
+2023/05/26-15:07:18.876 6408 Reusing old log C:\Users\Lucas\AppData\Local\Temp\flutter_tools.d04024f7\flutter_tools_chrome_device.636086ea\Default\Sync Data\LevelDB/000026.log 
+2023/05/26-15:07:18.876 6408 Delete type=0 #3
+2023/05/26-15:07:18.877 6408 Delete type=0 #4
+2023/05/26-15:07:18.877 6408 Delete type=0 #7
+2023/05/26-15:07:18.877 6408 Delete type=2 #8
+2023/05/26-15:07:18.877 6408 Delete type=0 #10
+2023/05/26-15:07:18.877 6408 Delete type=2 #11
+2023/05/26-15:07:18.877 6408 Delete type=0 #13
+2023/05/26-15:07:18.877 6408 Delete type=2 #14
+2023/05/26-15:07:18.882 6408 Delete type=0 #16
+2023/05/26-15:07:18.882 6408 Delete type=2 #17
+2023/05/26-15:07:18.882 6408 Delete type=0 #19
+2023/05/26-15:07:18.882 6408 Delete type=0 #23
+2023/05/26-15:09:29.499 590c Level-0 table #30: started
+2023/05/26-15:09:29.503 590c Level-0 table #30: 52252 bytes OK
+2023/05/26-15:09:29.504 590c Delete type=0 #26
